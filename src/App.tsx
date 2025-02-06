@@ -1,12 +1,7 @@
-import { Button } from "./components/ui/button";
+import Hero from "./features/hero";
 
 function App() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <Button>Click me</Button>
-    </div>
-  );
+  return <Hero />;
 }
 
 export default App;
