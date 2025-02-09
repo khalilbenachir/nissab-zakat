@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
+import { useNissabQuery, useNissabStore } from "../store/use-nissab-store";
+
 const formSchema = z.object({
   goldValue: z.string(),
   silverValue: z.string(),
@@ -19,6 +21,13 @@ const formSchema = z.object({
 export type ZakatFormValues = z.infer<typeof formSchema>;
 
 export function useZakatCalculator() {
+  const { data } = useNissabQuery();
+  const getNissabValue = useNissabStore((state) => state.getNissabValue);
+
+  const availableCurrencies = data
+    ? Object.keys(data.currency_exchange_rates || {})
+    : [];
+
   const form = useForm<ZakatFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,6 +70,12 @@ export function useZakatCalculator() {
 
   const calculateZakat = () => {
     const total = calculateTotal();
+    const nissabValue = getNissabValue(data) ?? 0;
+
+    if (total < nissabValue) {
+      return 0;
+    }
+
     return total * 0.025;
   };
 
@@ -68,5 +83,6 @@ export function useZakatCalculator() {
     form,
     totalAssets: calculateTotal(),
     zakatPayable: calculateZakat(),
+    availableCurrencies,
   };
-} 
+}

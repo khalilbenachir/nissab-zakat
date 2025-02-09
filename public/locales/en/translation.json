@@ -39,6 +39,29 @@
         "totalAssets": "Total Assets",
         "zakatPayable": "Zakat Payable"
       }
+    },
+    "errors": {
+      "fetchNissab": "Failed to fetch nissab values"
+    },
+    "nissab": {
+      "select": {
+        "placeholder": "Select Nissab Type",
+        "gold": "Gold Nissab",
+        "silver": "Silver Nissab"
+      },
+      "gold": {
+        "title": "Gold Nissab (87.48g)",
+        "price": "Based on gold price: ${{price}}/g"
+      },
+      "silver": {
+        "title": "Silver Nissab (612.36g)",
+        "price": "Based on silver price: ${{price}}/g"
+      }
+    },
+    "currency": {
+      "select": {
+        "placeholder": "Currency"
+      }
     }
   }
 }
