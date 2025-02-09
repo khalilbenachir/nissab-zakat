@@ -5,5 +5,36 @@
   "nissab_zakat_subtitle": "Le montant minimum requis pour le calcul de la Zakat basé sur les prix actuels de l'or et de l'argent.",
   "nissab_zakat_description": "Restez informé sur la valeur actuelle du Nissab basée sur les prix de l'or et de l'argent pour un calcul précis de la Zakat.",
   "nissab_zakat_last_updated": "Dernière mise à jour le {{date}}",
-  "nissab_zakat_value": "Valeur actuelle du Nissab"
+  "nissab_zakat_value": "Valeur actuelle du Nissab",
+  "zakat_calculator_title": "Calculateur de Zakat",
+  "zakat_calculator_description": "Giving Zakat is a religious obligation for all eligible Muslims and is based on the current nisab values. These values can vary yearly, making Zakat computation challenging. To simplify this, we provide the nisab values for 2025 and a detailed Zakat calculator to help you determine your contribution. If you need a more in-depth understanding of how to calculate Zakat in Islam, visit our comprehensive guide.",
+  "zakat_calculator_last_updated": "Dernière mise à jour le {{date}}",
+  "zakat": {
+    "form": {
+      "assets": {
+        "title": "Enter all assets that have been in your possession over a lunar year:",
+        "goldValue": "Value of Gold",
+        "silverValue": "Value of Silver"
+      },
+      "cash": {
+        "title": "Cash:",
+        "inHand": "In hand and in bank accounts",
+        "deposited": "Deposited for future purpose (e.g. Hajj)",
+        "loans": "Given out in loans",
+        "investments": "Business investments, shares, etc."
+      },
+      "tradeGoods": {
+        "title": "Trade Goods:",
+        "stockValue": "Value of Stock"
+      },
+      "liabilities": {
+        "title": "Liabilities:",
+        "shortTerm": "Short Term Loan",
+        "longTerm": "Long Term Loan",
+        "overdraft": "Overdraft",
+        "creditCard": "Credit Card"
+      },
+      "submit": "Calculate Zakat"
+    }
+  }
 }

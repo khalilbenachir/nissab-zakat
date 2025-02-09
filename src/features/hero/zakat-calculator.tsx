@@ -1,28 +1,29 @@
+import { useTranslation } from "react-i18next";
+
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import NissabInformation from "./nissab-information";
+import { ZakatCalculatorForm } from "./zakat-calculator-form";
 
 const ZakatCalculator = () => {
+  const { t } = useTranslation();
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Business Solutions</CardTitle>
-        <CardDescription>Streamline your business operations</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </CardContent>
-      <CardFooter>
-        <p className="text-sm text-muted-foreground">Last updated 3 days ago</p>
-      </CardFooter>
+    <Card className="w-full max-w-6xl grid grid-cols-2 gap-4 p-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>{t("zakat_calculator_title")}</CardTitle>
+          <CardDescription>{t("zakat_calculator_description")}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ZakatCalculatorForm />
+        </CardContent>
+      </Card>
+      <NissabInformation />
     </Card>
   );
 };
