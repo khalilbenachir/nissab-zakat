@@ -34,7 +34,11 @@
         "overdraft": "Overdraft",
         "creditCard": "Credit Card"
       },
-      "submit": "Calculate Zakat"
+      "submit": "Calculate Zakat",
+      "summary": {
+        "totalAssets": "Total Assets",
+        "zakatPayable": "Zakat Payable"
+      }
     }
   }
 }

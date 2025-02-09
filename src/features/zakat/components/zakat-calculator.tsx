@@ -7,10 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import NissabInformation from "./nissab-information";
 import { ZakatCalculatorForm } from "./zakat-calculator-form";
+import { NissabInformation } from "./nissab-information";
 
-const ZakatCalculator = () => {
+export const ZakatCalculator = () => {
   const { t } = useTranslation();
   return (
     <Card className="w-full max-w-6xl grid grid-cols-2 gap-4 p-4">
@@ -27,5 +27,3 @@ const ZakatCalculator = () => {
     </Card>
   );
 };
-
-export default ZakatCalculator;

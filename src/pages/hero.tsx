@@ -2,8 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import { ThemeToggle } from "@/components/theme-toggle/theme-toggle";
 import { SectionHeader } from "@/components/ui/section-header";
-
-import ZakatCalculator from "./zakat-calculator";
+import { ZakatCalculator } from "@/features/zakat";
 
 const Hero = () => {
   const { t } = useTranslation();
