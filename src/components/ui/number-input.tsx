@@ -9,7 +9,7 @@ interface NumberInputProps {
 }
 
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
-  ({ value, onChange, ...props }, ref) => {
+  ({ value, onChange, ...props }) => {
     return (
       <NumericFormat
         customInput={Input}
