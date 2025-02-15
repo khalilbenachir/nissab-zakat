@@ -1,7 +1,9 @@
 import { useTranslation } from "react-i18next";
 
-import { cn } from "@/lib/utils";
-import { useZakatCalculator, ZakatFormValues } from "@/features/zakat/hooks/use-zakat-calculator";
+import {
+  useZakatCalculator,
+  ZakatFormValues,
+} from "@/features/zakat/hooks/use-zakat-calculator";
 import {
   Form,
   FormControl,
@@ -13,9 +15,11 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { NumberInput } from "@/components/ui/number-input";
 
+import { ZakatTotal } from "./zakat-totals";
+
 export function ZakatCalculatorForm() {
   const { t } = useTranslation();
-  const { form, totalAssets, zakatPayable } = useZakatCalculator();
+  const { form } = useZakatCalculator();
 
   function onSubmit(values: ZakatFormValues) {
     console.log(values);
@@ -213,29 +217,7 @@ export function ZakatCalculatorForm() {
           </div>
         </div>
 
-        <div className="space-y-4 pt-4">
-          <div className="flex justify-between items-center p-4">
-            <h3 className="text-lg font-medium">
-              {t("zakat.form.summary.totalAssets")}
-            </h3>
-            <p className="text-xl font-bold">
-              ${totalAssets.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </p>
-          </div>
-          <div
-            className={cn(
-              "flex justify-between items-center",
-              "p-4 rounded-lg bg-primary/10"
-            )}
-          >
-            <h3 className="text-lg font-medium text-primary">
-              {t("zakat.form.summary.zakatPayable")}
-            </h3>
-            <p className="text-2xl font-bold text-primary">
-              ${zakatPayable.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </p>
-          </div>
-        </div>
+        <ZakatTotal />
       </form>
     </Form>
   );

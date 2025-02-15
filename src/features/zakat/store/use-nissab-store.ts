@@ -21,7 +21,7 @@ export const useNissabStore = create<NissabStore>((set, get) => ({
   getNissabValue: (data) => {
     const { selectedNissab } = get();
     if (!data || !selectedNissab) return undefined;
-    
+
     return selectedNissab === "gold"
       ? data.nissab_gold_threshold
       : data.nissab_silver_threshold;
@@ -29,11 +29,9 @@ export const useNissabStore = create<NissabStore>((set, get) => ({
 }));
 
 export function useNissabQuery() {
-  const currency = useNissabStore((state) => state.currency);
-  
   return useQuery({
-    queryKey: ["nissab", currency],
-    queryFn: () => fetchNissabValues(currency),
+    queryKey: ["nissab"],
+    queryFn: () => fetchNissabValues(),
     staleTime: 1000 * 60 * 60 * 24,
     refetchInterval: 1000 * 60 * 60 * 24,
   });

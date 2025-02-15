@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { format } from "date-fns";
 
@@ -10,27 +9,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useNissabStore, useNissabQuery } from "../store/use-nissab-store";
-import { Skeleton } from "@/components/ui/skeleton";
+import { useNissabStore } from "../store/use-nissab-store";
 import { NissabType } from "../store/use-nissab-store";
+import { useNissabInformation } from "../hooks/use-nissab-information";
 import { NissabSelector } from "./nissab-selector";
-import { NissabCard } from "./nissab-card";
 import { CurrencySelector } from "./currency-selector";
+import { NissabOptions } from "./nissab-options";
 
 export function NissabInformation() {
   const { t } = useTranslation();
   const { selectedNissab, setSelectedNissab, currency, setCurrency } =
     useNissabStore();
-  const { data, isLoading, isError } = useNissabQuery();
+  const { nessabDetails, currencies, hasError } = useNissabInformation();
 
-  useEffect(() => {
-    if (data && !selectedNissab) {
-      setSelectedNissab("gold");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.gold_price]);
-
-  if (isError) {
+  if (hasError) {
     return (
       <Card className="sticky top-5 h-fit">
         <CardContent className="p-6">
@@ -45,10 +37,10 @@ export function NissabInformation() {
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           {t("nissab_zakat_title")}
-          {data?.currency_exchange_rates && (
+          {nessabDetails?.currency_exchange_rates && (
             <CurrencySelector
               currency={currency}
-              availableCurrencies={Object.keys(data.currency_exchange_rates)}
+              availableCurrencies={currencies}
               onCurrencyChange={setCurrency}
             />
           )}
@@ -61,32 +53,16 @@ export function NissabInformation() {
           onNissabChange={(value: NissabType) => setSelectedNissab(value)}
         />
 
-        <div className="grid gap-4">
-          {isLoading ? (
-            <Skeleton className="h-[200px] w-full" />
-          ) : (
-            <>
-              <NissabCard
-                type="gold"
-                selectedNissab={selectedNissab}
-                threshold={data?.nissab_gold_threshold ?? 0}
-                price={data?.gold_price ?? 0}
-              />
-              <NissabCard
-                type="silver"
-                selectedNissab={selectedNissab}
-                threshold={data?.nissab_silver_threshold ?? 0}
-                price={data?.silver_price ?? 0}
-              />
-            </>
-          )}
-        </div>
+        <NissabOptions />
       </CardContent>
       <CardFooter>
         <p className="text-sm text-muted-foreground">
           {t("nissab_zakat_last_updated", {
-            date: data
-              ? format(new Date(data.last_metal_price_update_date), "PPpp")
+            date: nessabDetails
+              ? format(
+                  new Date(nessabDetails.last_metal_price_update_date),
+                  "PPpp"
+                )
               : new Date().toLocaleDateString(),
           })}
         </p>

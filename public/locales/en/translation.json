@@ -51,11 +51,11 @@
       },
       "gold": {
         "title": "Gold Nissab (87.48g)",
-        "price": "Based on gold price: ${{price}}/g"
+        "price": "Based on gold price: {{currency}} {{price}}/g"
       },
       "silver": {
         "title": "Silver Nissab (612.36g)",
-        "price": "Based on silver price: ${{price}}/g"
+        "price": "Based on silver price: {{currency}} {{price}}/g"
       }
     },
     "currency": {

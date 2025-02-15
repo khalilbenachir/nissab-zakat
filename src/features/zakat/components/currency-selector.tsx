@@ -7,10 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Currency } from "../utils/normalize-currency-list";
 
 interface CurrencySelectorProps {
   currency: string;
-  availableCurrencies: string[];
+  availableCurrencies: Currency[];
   onCurrencyChange: (currency: string) => void;
 }
 
@@ -28,11 +29,11 @@ export function CurrencySelector({
       </SelectTrigger>
       <SelectContent>
         {availableCurrencies.map((curr) => (
-          <SelectItem key={curr} value={curr}>
-            {curr}
+          <SelectItem key={curr?.name} value={curr?.name}>
+            {curr?.name}
           </SelectItem>
         ))}
       </SelectContent>
     </Select>
   );
-} 
+}
