@@ -9,6 +9,10 @@ This project is a Zakat Calculator built with React, TypeScript, and Vite. It pr
 - Light and dark theme support.
 - Persistent state using Zustand.
 
+## Live Demo
+
+You can visit the app live at Zakat Calculator: https://zakat-calculator-mu.vercel.app/
+
 ## Getting Started
 
 ### Prerequisites
