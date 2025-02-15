@@ -1,26 +1,19 @@
 {
-  "hero_title": "Nissab Zakat : Calculateur de Zakat en Ligne - Calcul Précis et Conforme à l'Islam",
-  "hero_subtitle": "Découvrez un outil simple et fiable pour calculer votre Zakat en toute sérénité. Guide complet, conseils pratiques et ressources pour remplir ce pilier essentiel de l'Islam.",
-  "nissab_zakat_title": "Nissab Zakat",
-  "nissab_zakat_subtitle": "Le montant minimum requis pour le calcul de la Zakat basé sur les prix actuels de l'or et de l'argent.",
-  "nissab_zakat_description": "Restez informé sur la valeur actuelle du Nissab basée sur les prix de l'or et de l'argent pour un calcul précis de la Zakat.",
-  "nissab_zakat_last_updated": "Dernière mise à jour le {{date}}",
-  "nissab_zakat_value": "Valeur actuelle du Nissab",
-  "zakat_calculator_title": "Calculateur de Zakat",
-  "zakat_calculator_description": "Giving Zakat is a religious obligation for all eligible Muslims and is based on the current nisab values. These values can vary yearly, making Zakat computation challenging. To simplify this, we provide the nisab values for 2025 and a detailed Zakat calculator to help you determine your contribution. If you need a more in-depth understanding of how to calculate Zakat in Islam, visit our comprehensive guide.",
-  "zakat_calculator_last_updated": "Dernière mise à jour le {{date}}",
+  "hero_title": "Online Zakat Calculator - Nissab Zakat: Accurate and Sharia-Compliant Calculation",
+  "hero_subtitle": "Discover a simple and reliable tool to calculate your Zakat with peace of mind. Complete guide, practical tips, and resources to fulfill this essential pillar of Islam.",
+  "zakat_calculator_description": "Paying Zakat is a religious obligation for every eligible Muslim, based on the current Nissab values. These values can vary each year, making Zakat calculation complex. To simplify this process, our online Zakat calculator allows you to quickly and accurately determine your contribution in compliance with Islamic principles. Use our tool now to calculate your Zakat in just a few simple steps.",
   "zakat": {
     "form": {
       "assets": {
-        "title": "Enter all assets that have been in your possession over a lunar year:",
+        "title": "Enter all assets that have been in your possession for a lunar year (Hawl):",
         "goldValue": "Value of Gold",
         "silverValue": "Value of Silver"
       },
       "cash": {
         "title": "Cash:",
-        "inHand": "In hand and in bank accounts",
-        "deposited": "Deposited for future purpose (e.g. Hajj)",
-        "loans": "Given out in loans",
+        "inHand": "Cash on hand and in bank accounts",
+        "deposited": "Money saved for a future purpose (e.g., Hajj)",
+        "loans": "Loans given to others",
         "investments": "Business investments, shares, etc."
       },
       "tradeGoods": {
@@ -29,19 +22,16 @@
       },
       "liabilities": {
         "title": "Liabilities:",
-        "shortTerm": "Short Term Loan",
-        "longTerm": "Long Term Loan",
-        "overdraft": "Overdraft",
-        "creditCard": "Credit Card"
+        "shortTerm": "Short-term Debts",
+        "longTerm": "Long-term Debts",
+        "overdraft": "Bank Overdraft",
+        "creditCard": "Credit Card Debts"
       },
       "submit": "Calculate Zakat",
       "summary": {
         "totalAssets": "Total Assets",
         "zakatPayable": "Zakat Payable"
       }
-    },
-    "errors": {
-      "fetchNissab": "Failed to fetch nissab values"
     },
     "nissab": {
       "select": {
@@ -58,10 +48,11 @@
         "price": "Based on silver price: {{currency}} {{price}}/g"
       }
     },
-    "currency": {
-      "select": {
-        "placeholder": "Currency"
-      }
+    "errors": {
+      "fetchNissab": "We apologize, but we are currently unable to retrieve the Nissab values. This may be due to a temporary issue with the data source. Please try again later or manually enter the current gold and silver prices to proceed with your Zakat calculation. Thank you for your understanding"
     }
-  }
+  },
+  "nissab_zakat_title": "Nissab Zakat",
+  "nissab_zakat_subtitle": "The minimum amount required for Zakat calculation based on current gold and silver prices.",
+  "zakat_calculator_last_updated": "Last updated on {{date}}"
 }

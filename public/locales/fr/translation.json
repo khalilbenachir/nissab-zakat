@@ -1,6 +1,59 @@
 {
-  "hero_title": "Nissab Zakat : Calculateur de Zakat en Ligne - Calcul Précis et Conforme à l'Islam",
+  "hero_title": "Calculateur de Zakat en Ligne - Nissab Zakat : Calcul Précis et Conforme à la Charia",
   "hero_subtitle": "Découvrez un outil simple et fiable pour calculer votre Zakat en toute sérénité. Guide complet, conseils pratiques et ressources pour remplir ce pilier essentiel de l'Islam.",
+  "zakat_calculator_description": "Le versement de la Zakat est une obligation religieuse pour tout musulman éligible, basée sur les valeurs actuelles du Nissab. Ces valeurs peuvent varier chaque année, rendant le calcul de la Zakat complexe. Pour vous faciliter la tâche, notre calculateur de Zakat en ligne vous permet de déterminer rapidement et précisément votre contribution, en conformité avec les principes de l'Islam. Utilisez notre outil dès maintenant pour calculer votre Zakat en quelques étapes simples.",
+  "zakat": {
+    "form": {
+      "assets": {
+        "title": "Saisissez tous les biens qui ont été en votre possession pendant une année lunaire (Hawl) :",
+        "goldValue": "Valeur de l'or",
+        "silverValue": "Valeur de l'argent"
+      },
+      "cash": {
+        "title": "Argent liquide :",
+        "inHand": "Argent en main et dans les comptes bancaires",
+        "deposited": "Argent épargné pour un objectif futur (ex. Hajj)",
+        "loans": "Prêts accordés à autrui",
+        "investments": "Investissements commerciaux, actions, etc."
+      },
+      "tradeGoods": {
+        "title": "Biens commerciaux :",
+        "stockValue": "Valeur des stocks"
+      },
+      "liabilities": {
+        "title": "Dettes et obligations :",
+        "shortTerm": "Dettes à court terme",
+        "longTerm": "Dettes à long terme",
+        "overdraft": "Découvert bancaire",
+        "creditCard": "Dettes de carte de crédit"
+      },
+      "submit": "Calculer la Zakat",
+      "summary": {
+        "totalAssets": "Total des biens",
+        "zakatPayable": "Montant de la Zakat à payer"
+      }
+    },
+    "nissab": {
+      "select": {
+        "placeholder": "Sélectionnez le type de Nissab",
+        "gold": "Nissab de l'or",
+        "silver": "Nissab de l'argent"
+      },
+      "gold": {
+        "title": "Nissab de l'or (87,48g)",
+        "price": "Basé sur le prix de l'or : {{currency}} {{price}}/g"
+      },
+      "silver": {
+        "title": "Nissab de l'argent (612,36g)",
+        "price": "Basé sur le prix de l'argent : {{currency}} {{price}}/g"
+      }
+    },
+    "errors": {
+      "fetchNissab": "Nous nous excusons, mais nous ne parvenons pas à récupérer les valeurs du Nissab pour le moment. Cela peut être dû à un problème temporaire avec la source de données. Veuillez réessayer plus tard ou saisir manuellement les prix actuels de l'or et de l'argent pour continuer votre calcul de la Zakat. Merci de votre compréhension !"
+    }
+  },
+
   "nissab_zakat_title": "Nissab Zakat",
-  "nissab_zakat_subtitle": "Le montant minimum requis pour le calcul de la Zakat basé sur les prix actuels de l'or et de l'argent."
+  "nissab_zakat_subtitle": "Le montant minimum requis pour le calcul de la Zakat basé sur les prix actuels de l'or et de l'argent.",
+  "zakat_calculator_last_updated": "Dernière mise à jour le {{date}}"
 }
