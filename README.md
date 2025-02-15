@@ -18,6 +18,7 @@ This project is a Zakat Calculator built with React, TypeScript, and Vite. It pr
 
 ### Project Structure
 
+```plaintext
 ├── public
 │   └── zakat-logo.webp
 ├── src
