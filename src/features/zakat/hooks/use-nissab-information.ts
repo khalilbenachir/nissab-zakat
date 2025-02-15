@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 
-import { useNissabQuery, useNissabStore } from "../store/use-nissab-store";
+import { useNissabQuery } from "../api/use-nissab-query";
+import { useNissabStore } from "../store/use-nissab-store";
 import {
   getCurrentCurrency,
   normalizeCurrencyList,

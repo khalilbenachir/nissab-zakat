@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-import { useNissabQuery, useNissabStore } from "../store/use-nissab-store";
+import { useNissabStore } from "../store/use-nissab-store";
+import { useNissabQuery } from "../api/use-nissab-query";
 
 const formSchema = z.object({
   goldValue: z.string(),
