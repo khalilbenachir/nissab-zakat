@@ -45,6 +45,7 @@ This project is a Zakat Calculator built with React, TypeScript, and Vite. It pr
 ├── tailwind.config.js
 ├── tsconfig.json
 └── vite.config.ts
+```
 
 ### Contributing
 
