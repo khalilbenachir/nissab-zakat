@@ -1,52 +1,13 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { useFormContext, useWatch } from "react-hook-form";
 
 import { useNissabStore } from "../store/use-nissab-store";
 import { useNissabQuery } from "../api/use-nissab-query";
 
-const formSchema = z.object({
-  goldValue: z.string(),
-  silverValue: z.string(),
-  cashInHand: z.string(),
-  depositedCash: z.string(),
-  loanedCash: z.string(),
-  investments: z.string(),
-  stockValue: z.string(),
-  shortTermLoan: z.string(),
-  longTermLoan: z.string(),
-  overdraft: z.string(),
-  creditCard: z.string(),
-});
-
-export type ZakatFormValues = z.infer<typeof formSchema>;
-
 export function useZakatCalculator() {
+  const { control } = useFormContext();
+  const values = useWatch({ control });
   const { data } = useNissabQuery();
   const getNissabValue = useNissabStore((state) => state.getNissabValue);
-
-  const availableCurrencies = data
-    ? Object.keys(data.currency_exchange_rates || {})
-    : [];
-
-  const form = useForm<ZakatFormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      goldValue: "",
-      silverValue: "",
-      cashInHand: "",
-      depositedCash: "",
-      loanedCash: "",
-      investments: "",
-      stockValue: "",
-      shortTermLoan: "",
-      longTermLoan: "",
-      overdraft: "",
-      creditCard: "",
-    },
-  });
-
-  const values = form.watch();
 
   const calculateTotal = () => {
     const assets = [
@@ -81,9 +42,7 @@ export function useZakatCalculator() {
   };
 
   return {
-    form,
     totalAssets: calculateTotal(),
     zakatPayable: calculateZakat(),
-    availableCurrencies,
   };
 }

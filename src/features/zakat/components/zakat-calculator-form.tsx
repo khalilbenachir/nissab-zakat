@@ -1,10 +1,6 @@
 import { useTranslation } from "react-i18next";
 
 import {
-  useZakatCalculator,
-  ZakatFormValues,
-} from "@/features/zakat/hooks/use-zakat-calculator";
-import {
   Form,
   FormControl,
   FormField,
@@ -16,10 +12,11 @@ import { Separator } from "@/components/ui/separator";
 import { NumberInput } from "@/components/ui/number-input";
 
 import { ZakatTotal } from "./zakat-totals";
+import { useZakatForm, ZakatFormValues } from "../hooks/use-zakat-form";
 
 export function ZakatCalculatorForm() {
   const { t } = useTranslation();
-  const { form } = useZakatCalculator();
+  const { form } = useZakatForm();
 
   function onSubmit(values: ZakatFormValues) {
     console.log(values);
