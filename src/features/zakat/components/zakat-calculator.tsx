@@ -13,7 +13,7 @@ import { NissabInformation } from "./nissab-information";
 export const ZakatCalculator = () => {
   const { t } = useTranslation();
   return (
-    <Card className="w-full max-w-6xl grid grid-cols-2 gap-4 p-4">
+    <Card className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
       <Card>
         <CardHeader>
           <CardTitle>{t("zakat_calculator_title")}</CardTitle>

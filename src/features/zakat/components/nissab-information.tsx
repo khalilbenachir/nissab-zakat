@@ -24,7 +24,7 @@ export function NissabInformation() {
 
   if (hasError) {
     return (
-      <Card className="sticky top-5 h-fit">
+      <Card className="row-start-1 md:row-auto md:sticky md:top-5 h-fit">
         <CardContent className="p-6">
           <p className="text-destructive">{t("zakat.errors.fetchNissab")}</p>
         </CardContent>
@@ -33,7 +33,7 @@ export function NissabInformation() {
   }
 
   return (
-    <Card className="sticky top-5 h-fit">
+    <Card className="row-start-1 md:row-auto md:sticky md:top-5 h-fit">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           {t("nissab_zakat_title")}

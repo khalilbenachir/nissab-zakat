@@ -30,7 +30,7 @@ export function ZakatCalculatorForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="space-y-4">
           <h3 className="font-semibold">{t("zakat.form.assets.title")}</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="goldValue"
@@ -64,14 +64,14 @@ export function ZakatCalculatorForm() {
 
         <div className="space-y-4">
           <h3 className="font-semibold">{t("zakat.form.cash.title")}</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end">
             <div className="space-y-2">
               <FormField
                 control={form.control}
                 name="cashInHand"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="h-12">
+                    <div>
                       <FormLabel>{t("zakat.form.cash.inHand")}</FormLabel>
                     </div>
                     <FormControl>
@@ -88,7 +88,7 @@ export function ZakatCalculatorForm() {
                 name="depositedCash"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="h-12">
+                    <div>
                       <FormLabel>{t("zakat.form.cash.deposited")}</FormLabel>
                     </div>
                     <FormControl>
@@ -105,7 +105,7 @@ export function ZakatCalculatorForm() {
                 name="loanedCash"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="h-12">
+                    <div>
                       <FormLabel>{t("zakat.form.cash.loans")}</FormLabel>
                     </div>
                     <FormControl>
@@ -122,7 +122,7 @@ export function ZakatCalculatorForm() {
                 name="investments"
                 render={({ field }) => (
                   <FormItem>
-                    <div className="h-12">
+                    <div>
                       <FormLabel>{t("zakat.form.cash.investments")}</FormLabel>
                     </div>
                     <FormControl>
@@ -159,7 +159,7 @@ export function ZakatCalculatorForm() {
 
         <div className="space-y-4">
           <h3 className="font-semibold">{t("zakat.form.liabilities.title")}</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="shortTermLoan"
