@@ -60,12 +60,13 @@ export function NissabInformation() {
       <CardFooter>
         <p className="text-sm text-muted-foreground">
           {t("nissab_zakat_last_updated", {
-            date: nessabDetails
-              ? format(
-                  new Date(nessabDetails.last_metal_price_update_date),
-                  "PPpp"
-                )
-              : new Date().toLocaleDateString(),
+            date:
+              nessabDetails && nessabDetails?.last_metal_price_update_date
+                ? format(
+                    new Date(nessabDetails.last_metal_price_update_date),
+                    "PPpp"
+                  )
+                : new Date().toLocaleDateString(),
           })}
         </p>
       </CardFooter>
