@@ -22,7 +22,7 @@ const LanguageToggle = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <span className="sr-only">{t("toggle_language.icon")}</span>
-          {i18n.language === "fr" ? (
+          {i18n?.language === "fr" ? (
             <span className="fi fi-fr"></span>
           ) : (
             <span className="fi fi-gb"></span>

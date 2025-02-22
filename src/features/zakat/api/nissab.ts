@@ -1,14 +1,14 @@
 export interface NissabResponse {
-  nissab_value: number;
-  base_currency: string;
-  base_weight_unit: string;
-  gold_price: number;
-  silver_price: number;
+  nissab_value?: number;
+  base_currency?: string;
+  base_weight_uni?: string;
+  gold_price?: number;
+  silver_price?: number;
   nissab_gold_threshold: number;
   nissab_silver_threshold: number;
-  last_metal_price_update_date: string;
-  last_currency_update_date: string;
-  currency_exchange_rates: Record<string, number>;
+  last_metal_price_update_date?: string;
+  last_currency_update_date?: string;
+  currency_exchange_rates?: Record<string, number>;
 }
 
 export async function fetchNissabValues(currency: string = "USD"): Promise<NissabResponse> {
